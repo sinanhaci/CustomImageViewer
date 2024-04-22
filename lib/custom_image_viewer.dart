@@ -42,6 +42,7 @@ class CustomImageViewer<T> extends StatelessWidget {
     this.openElevation,
     this.openShape,
     this.closedShape,
+    this.headers,
   }) : super(key: key);
 
   final Widget child;
@@ -71,6 +72,7 @@ class CustomImageViewer<T> extends StatelessWidget {
   final double? openElevation;
   final ShapeBorder? openShape;
   final ShapeBorder? closedShape;
+  final Map<String, String>? headers;
 
   @override
   Widget build(BuildContext context) {
@@ -108,6 +110,7 @@ class CustomImageViewer<T> extends StatelessWidget {
         pageIndicatorAlignment: pageIndicatorAlignment,
         pageIndicatorPadding: pageIndicatorPadding,
         pageIndicatorTextStyle: pageIndicatorTextStyle,
+        headers: headers,
       ),
     );
   }
