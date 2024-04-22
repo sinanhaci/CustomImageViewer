@@ -135,7 +135,8 @@ class FullScreenView<T> extends StatefulWidget {
     required this.pageIndicatorPadding ,
     required this.pageIndicatorTextStyle,
     this.customButton,
-    this.customImageViewer
+    this.customImageViewer,
+    this.headers
   }) : super(key: key);
 
   final List<T> images;
@@ -152,6 +153,7 @@ class FullScreenView<T> extends StatefulWidget {
   final TextStyle pageIndicatorTextStyle;
   final EdgeInsets pageIndicatorPadding;
   final Widget? customImageViewer;
+  final Map<String, String>? headers;
 
   @override
   State<FullScreenView> createState() => _FullScreenViewState();
@@ -323,6 +325,7 @@ class _FullScreenViewState extends State<FullScreenView> {
               ),
             );
           },
+          headers: widget.headers,
         );
       case ImageType.memory:
         return Image.memory(
